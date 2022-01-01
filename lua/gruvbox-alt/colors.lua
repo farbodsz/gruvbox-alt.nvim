@@ -1,8 +1,8 @@
 local palette = require("gruvbox-alt.palette")
 
 return {
-  bg = palette.dark0_hard,
-  bg_dark = palette.dark0_hard_darker,
+  bg = palette.badwolf_dark0,
+  bg_dark = palette.badwolf_dark0_darker,
   bg_light0 = palette.dark1,
   bg_light1 = palette.dark2,
   bg_light2 = palette.dark3,

@@ -1,4 +1,6 @@
 return {
+  badwolf_dark0 = "#1c1b1a",
+  badwolf_dark0_darker = "#171616",
   dark0_hard_darker = "#151818",
   dark0_hard = "#1d2021",
   dark0 = "#282828",
