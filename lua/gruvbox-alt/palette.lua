@@ -34,6 +34,7 @@ return {
   neutral_aqua = "#689d6a",
   neutral_orange = "#d65d0e",
 
+  -- TODO: More faded
   faded_red = "#9d0006",
   faded_green = "#79740e",
   faded_yellow = "#b57614",

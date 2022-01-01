@@ -9,7 +9,7 @@ return {
   bg_light3 = palette.dark4,
 
   bg_menu = palette.dark1,
-  bg_menu_sel = palette.faded_aqua,
+  bg_menu_sel = palette.dark3,
   bg_search = palette.faded_yellow,
   bg_status = palette.darkest,
   bg_visual = palette.dark3,
@@ -38,7 +38,6 @@ return {
     hint = palette.bright_aqua,
   },
 
-  -- TODO: these need to be lighter!
   diff = {
     add = palette.faded_green,
     delete = palette.faded_red,
@@ -47,8 +46,8 @@ return {
   },
 
   git = {
-    added = palette.bright_green,
-    removed = palette.bright_red,
-    changed = palette.bright_aqua,
+    added = palette.neutral_green,
+    removed = palette.neutral_red,
+    changed = palette.neutral_aqua,
   },
 }
