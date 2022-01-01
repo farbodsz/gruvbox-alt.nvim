@@ -2,43 +2,34 @@ local palette = require("gruvbox-alt.palette")
 
 return {
   bg = palette.dark0_hard,
-  bg_dark = palette.darkest,
+  bg_dark = palette.dark0_hard_darker,
   bg_light0 = palette.dark1,
   bg_light1 = palette.dark2,
   bg_light2 = palette.dark3,
   bg_light3 = palette.dark4,
 
-  bg_menu = palette.darkest,
+  bg_menu = palette.dark1,
   bg_menu_sel = palette.faded_aqua,
-
-  bg_status = palette.darkest,
-  bg_visual = palette.light4,
   bg_search = palette.faded_yellow,
+  bg_status = palette.darkest,
+  bg_visual = palette.dark3,
 
-  fg_border = palette.dark3,
-  fg_dark = palette.light1,
-  fg_reverse = palette.light4,
-
-  fg_comment = palette.gray,
   fg = palette.light0,
-  fg_soft = palette.light0_soft,
+  fg_border = palette.dark3,
+  fg_comment = palette.gray,
+  fg_dark = palette.light1,
 
   -- Syntax colors
   constant = palette.bright_purple,
   string = palette.bright_green,
   number = palette.bright_purple,
   identifier = palette.bright_blue,
-  func = palette.light0,
-  stmt = palette.bright_red, --statement
-  keyword = palette.bright_red, --keyword
-  preproc = palette.bright_aqua, --preproc
+  func = palette.bright_green,
+  stmt = palette.bright_red,
+  keyword = palette.bright_red,
+  preproc = palette.bright_aqua,
   type = palette.bright_yellow,
-  special = palette.bright_orange, -- special
-  sp2 = palette.bright_red, -- exception
-  sp3 = palette.bright_red, -- exception
-  br = palette.gray, -- break
-  re = palette.bright_aqua, -- regex or escape
-  dep = palette.gray,
+  special = palette.bright_orange,
 
   diag = {
     error = palette.bright_red,

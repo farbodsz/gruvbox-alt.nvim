@@ -1,5 +1,5 @@
 return {
-  darkest = "#151818",
+  dark0_hard_darker = "#151818",
   dark0_hard = "#1d2021",
   dark0 = "#282828",
   dark0_soft = "#32302f",

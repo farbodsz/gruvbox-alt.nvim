@@ -55,14 +55,14 @@ return {
   Whitespace = { fg = colors.bg_light2 },
 
   -- Floating
-  NormalFloat = { fg = colors.fg, bg = colors.bg_light0 },
+  NormalFloat = { fg = colors.fg, bg = colors.bg_menu },
   FloatBorder = { fg = colors.fg_border, bg = "NONE" },
 
   -- Popup and wild menu
   Pmenu = { fg = colors.fg, bg = colors.bg_menu },
   PmenuSel = { fg = "NONE", bg = colors.bg_menu_sel },
   PmenuSbar = { link = "Pmenu" },
-  PmenuThumb = { bg = colors.bg_search },
+  PmenuThumb = { bg = colors.bg_menu_sel },
   WildMenu = { link = "Pmenu" },
 
   -- Quickfix
@@ -88,7 +88,7 @@ return {
   TabLineSel = { fg = colors.fg_dark, bg = colors.bg_light1, style = "NONE" },
 
   -- Visual
-  Visual = { bg = colors.bg_light2 },
+  Visual = { bg = colors.bg_visual },
   VisualNOS = { link = "Visual" },
 
   ------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return {
   Statement = { fg = colors.stmt },
   Operator = { fg = colors.keyword },
   Keyword = { fg = colors.keyword },
-  Exception = { fg = colors.sp2 },
+  Exception = { fg = colors.keyword },
 
   PreProc = { fg = colors.preproc },
   Type = { fg = colors.type },
@@ -119,6 +119,16 @@ return {
   Ignore = { link = "NonText" },
   Error = { fg = colors.diag.error, bg = "NONE" },
   Todo = { fg = colors.fg, bg = colors.bg, style = "bold" },
+
+  ------------------------------------------------------------------------------
+  -- Filetypes
+  ------------------------------------------------------------------------------
+
+  -- Diff
+  diffAdded = { fg = colors.git.added },
+  diffRemoved = { fg = colors.git.removed },
+  diffChanged = { fg = colors.git.changed },
+  diffLine = { fg = colors.git.changed },
 
   ------------------------------------------------------------------------------
   -- Plugins
@@ -135,15 +145,6 @@ return {
   TSOperator = { link = "Operator" },
   TSPunctBracket = { link = "Comment" },
   TSTagDelimiter = { link = "Comment" },
-
-  -- Git
-  diffAdded = { fg = colors.git.added },
-  diffRemoved = { fg = colors.git.removed },
-  diffDeleted = { fg = colors.git.removed },
-  diffChanged = { fg = colors.git.changed },
-  diffOldFile = { fg = colors.git.removed },
-  diffNewFile = { fg = colors.git.added },
-  diffLine = { fg = colors.git.changed },
 
   -- Telescope
   TelescopeBorder = { link = "FloatBorder" },
