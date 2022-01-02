@@ -11,11 +11,16 @@ MIT.
 
 ### Acknowledgments
 
-Colors almost the same as the original Gruvbox theme:
+Colors heavily inspired by:
 
 - [morhetz/gruvbox](https://github.com/morhetz/gruvbox)
 - [gruvbox-community/gruvbox](https://github.com/gruvbox-community/gruvbox)
 
-Project structure inspired by a wonderful Lua colorscheme:
+Project structure inspired by:
 
+- [navarasu/onedark.nvim](https://github.com/navarasu/onedark.nvim)
 - [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+
+Other credits:
+
+- Alexei Boronine: Lua implementation of HSLuv and HPLuv color spaces

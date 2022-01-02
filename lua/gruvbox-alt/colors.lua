@@ -1,6 +1,7 @@
 local palette = require("gruvbox-alt.palette")
+local util = require("gruvbox-alt.util")
 
-return {
+local colors = {
   bg = palette.badwolf_dark0,
   bg_dark = palette.badwolf_dark0_darker,
   bg_light0 = palette.dark1,
@@ -38,16 +39,19 @@ return {
     hint = palette.bright_aqua,
   },
 
-  diff = {
-    add = palette.faded_green,
-    delete = palette.faded_red,
-    change = palette.faded_blue,
-    text = palette.faded_yellow,
-  },
-
   git = {
     added = palette.neutral_green,
     removed = palette.neutral_red,
-    changed = palette.neutral_aqua,
+    changed = palette.neutral_yellow,
+    changed_text = palette.neutral_aqua,
   },
 }
+
+colors.diff = {
+  add = util.darken(colors.git.added, 0.2),
+  delete = util.darken(colors.git.removed, 0.2),
+  change = util.darken(colors.git.changed, 0.2),
+  text = util.darken(colors.git.changed_text, 0.2),
+}
+
+return colors
