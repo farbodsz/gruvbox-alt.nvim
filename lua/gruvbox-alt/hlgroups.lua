@@ -134,6 +134,11 @@ return {
   -- Plugins
   ------------------------------------------------------------------------------
 
+  -- GitGutter
+  GitGutterAdd = { fg = colors.git.added },
+  GitGutterChange = { fg = colors.git.changed },
+  GitGutterDelete = { fg = colors.git.removed },
+
   -- NvimTree
   NvimTreeRootFolder = { fg = colors.special, style = "bold" },
   NvimTreeGitDirty = { fg = colors.git.changed },

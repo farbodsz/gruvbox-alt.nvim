@@ -42,8 +42,8 @@ local colors = {
   git = {
     added = palette.neutral_green,
     removed = palette.neutral_red,
-    changed = palette.neutral_yellow,
-    changed_text = palette.neutral_aqua,
+    changed = palette.neutral_blue,
+    changed_text = palette.neutral_yellow,
   },
 }
 
