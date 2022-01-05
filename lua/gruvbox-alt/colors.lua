@@ -12,7 +12,7 @@ local colors = {
   bg_menu = palette.dark1,
   bg_menu_sel = palette.dark3,
   bg_search = palette.faded_yellow,
-  bg_status = palette.darkest,
+  bg_status = palette.badwolf_dark0_darker,
   bg_visual = palette.dark3,
 
   fg = palette.light0,
