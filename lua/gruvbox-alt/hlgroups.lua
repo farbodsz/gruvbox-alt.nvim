@@ -147,9 +147,11 @@ return {
   NvimTreeSpecialFile = { fg = colors.special },
 
   -- Treesitter
+  TSDanger = { link = "ErrorMsg" },
   TSOperator = { link = "Operator" },
   TSPunctBracket = { link = "Comment" },
   TSTagDelimiter = { link = "Comment" },
+  TSTypeBuiltin = { link = "TSKeyword" },
 
   -- Telescope
   TelescopeBorder = { link = "FloatBorder" },
