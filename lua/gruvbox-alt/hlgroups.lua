@@ -38,7 +38,7 @@ return {
   ModeMsg = { fg = colors.diag.warning, style = "bold", bg = "NONE" },
   MsgArea = { fg = colors.fg_dark, bg = "NONE" },
   MoreMsg = { fg = colors.diag.info, bg = colors.bg, style = "NONE" },
-  Title = { fg = colors.func, style = "bold" },
+  Title = { fg = colors.type, style = "bold" },
   Question = { link = "MoreMsg" },
   ErrorMsg = { fg = colors.diag.error, bg = "NONE", style = "bold" },
   WarningMsg = { fg = colors.diag.warning, bg = "NONE" },
@@ -50,7 +50,7 @@ return {
   NormalSB = { link = "Normal" },
   MatchParen = { fg = colors.bg_search, bg = "NONE", style = "bold" },
   Conceal = { fg = colors.bg_light3, bg = "NONE", style = "bold" },
-  Directory = { fg = colors.func },
+  Directory = { fg = colors.type },
   SpecialKey = { link = "NonText" },
   Whitespace = { fg = colors.bg_light2 },
 
@@ -92,10 +92,10 @@ return {
   VisualNOS = { link = "Visual" },
 
   ------------------------------------------------------------------------------
-  -- Syntax groups
+  -- Syntax and treesitter
   ------------------------------------------------------------------------------
 
-  Comment = { fg = colors.fg_comment, style = "italic" },
+  Comment = { fg = colors.fg_comment },
 
   Constant = { fg = colors.constant },
   String = { fg = colors.string },
@@ -104,7 +104,7 @@ return {
   Boolean = { fg = colors.constant },
   Float = { link = "Number" },
 
-  Identifier = { fg = colors.identifier },
+  Identifier = { fg = colors.attribute },
   Function = { fg = colors.func },
   Statement = { fg = colors.stmt },
   Operator = { fg = colors.keyword },
@@ -119,6 +119,25 @@ return {
   Ignore = { link = "NonText" },
   Error = { fg = colors.diag.error, bg = "NONE" },
   Todo = { fg = colors.fg, bg = colors.bg, style = "bold" },
+
+  ["@field"] = { fg = colors.attribute },
+  ["@function"] = { fg = colors.func },
+  ["@function.call"] = { fg = colors.variable },
+  ["@include"] = { link = "Statement" },
+  ["@label"] = { fg = colors.attribute }, -- e.g. JSON key
+  ["@namespace"] = { fg = colors.attribute },
+  ["@property"] = { fg = colors.attribute },
+  ["@punctuation.bracket"] = { fg = colors.fg_comment },
+  ["@tag.attribute"] = { fg = colors.attribute },
+  ["@tag.delimiter"] = { fg = colors.fg_comment },
+  ["@text.danger"] = { link = "ErrorMsg" },
+  ["@type.builtin"] = { fg = colors.keyword },
+  ["@type.qualifier"] = { fg = colors.keyword }, -- e.g. C++ "public"
+  ["@variable"] = { fg = colors.variable },
+
+  xmlTag = { fg = colors.fg_comment },
+  xmlTagName = { fg = colors.variable },
+  xmlAttrib = { fg = colors.attribute },
 
   ------------------------------------------------------------------------------
   -- Filetypes
@@ -145,13 +164,6 @@ return {
   NvimTreeGitNew = { fg = colors.git.added },
   NvimTreeGitDeleted = { fg = colors.git.removed },
   NvimTreeSpecialFile = { fg = colors.special },
-
-  -- Treesitter
-  TSDanger = { link = "ErrorMsg" },
-  TSOperator = { link = "Operator" },
-  TSPunctBracket = { link = "Comment" },
-  TSTagDelimiter = { link = "Comment" },
-  TSTypeBuiltin = { link = "TSKeyword" },
 
   -- Telescope
   TelescopeBorder = { link = "FloatBorder" },
