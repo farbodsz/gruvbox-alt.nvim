@@ -1,5 +1,5 @@
-local palette = require("gruvbox-alt.palette")
-local util = require("gruvbox-alt.util")
+local palette = require("farbodsz.theme.palette")
+local util = require("farbodsz.theme.util")
 
 local colors = {
   bg = palette.badwolf_dark0,

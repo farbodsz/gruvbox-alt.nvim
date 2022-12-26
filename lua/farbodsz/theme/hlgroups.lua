@@ -1,4 +1,4 @@
-local colors = require("gruvbox-alt.colors")
+local colors = require("farbodsz.theme.colors")
 
 return {
   ------------------------------------------------------------------------------

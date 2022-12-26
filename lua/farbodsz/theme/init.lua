@@ -20,9 +20,9 @@ function M.load()
   if vim.g.colors_name then
     vim.cmd("hi clear")
   end
-  vim.g.colors_name = "gruvbox-alt"
+  vim.g.colors_name = "farbodsz-theme"
 
-  local hlgroups = require("gruvbox-alt.hlgroups")
+  local hlgroups = require("farbodsz.theme.hlgroups")
   set_highlights(hlgroups)
 end
 

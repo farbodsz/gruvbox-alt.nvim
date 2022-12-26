@@ -1,7 +1,21 @@
-# gruvbox-alt.nvim
+# farbodsz-theme.nvim
 
-My personal modified version of [gruvbox](https://github.com/morhetz/gruvbox),
+My theme, based on [gruvbox](https://github.com/morhetz/gruvbox) colors,
 written in Lua.
+
+> **NOTE:** This is mostly intended for my own, personal use.
+
+## Installation
+
+Packer:
+
+```lua 
+  use("farbodsz/theme.nvim")
+```
+
+```vim
+colorscheme farbodsz-theme
+```
 
 ## About
 
