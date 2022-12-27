@@ -110,7 +110,7 @@ return {
   Float = { link = "Number" },
 
   Identifier = { fg = colors.identifier },
-  Function = { fg = colors.func },
+  Function = { fg = "NONE" },
   Statement = { fg = colors.stmt },
   Operator = { fg = colors.keyword },
   Keyword = { fg = colors.keyword },
@@ -126,8 +126,10 @@ return {
   Todo = { fg = colors.fg_reverse, bg = colors.diag.info, style = "bold" },
 
   Directory = { fg = colors.func },
+  Tag = { link = "Special" },
 
-  ["@attribute"] = { link = "Constant" },
+  ["@attribute"] = { link = "Identifier" },
+  ["@constructor"] = { link = "Special" },
   ["@field"] = { link = "Identifier" },
   ["@function"] = { link = "Function" },
   ["@function.call"] = { link = "Function" },
@@ -147,14 +149,14 @@ return {
   ["@string.escape"] = { fg = colors.regex, style = "bold" },
 
   ["@tag"] = { link = "Tag" },
-  ["@tag.attribute"] = { link = "Constant" },
+  ["@tag.attribute"] = { link = "Identifier" },
   ["@tag.delimiter"] = { fg = colors.delimiter },
 
   ["@text.danger"] = { link = "ErrorMsg" },
   ["@text.strong"] = { style = "bold" },
   ["@text.emphasis"] = { style = "italic" },
   ["@text.warning"] = { link = "Todo" },
-  ["@text.title"] = { link = "Function" },
+  ["@text.title"] = { link = "Title" },
   ["@text.literal"] = { link = "String" },
 
   ["@type.builtin"] = { link = "Keyword" },
@@ -174,8 +176,8 @@ return {
 
   -- XML
   xmlTag = { fg = colors.delimiter },
-  xmlTagName = { fg = colors.fg },
-  xmlAttrib = { link = "Constant" },
+  xmlTagName = { link = "Tag" },
+  xmlAttrib = { link = "Identifier" },
 
   ------------------------------------------------------------------------------
   -- Plugins
