@@ -2,67 +2,74 @@ local colors = require("farbodsz.theme.colors")
 
 return {
   ------------------------------------------------------------------------------
-  -- Built-in highlight groups
+  -- Built-in highlight groups (:h highlight-groups)
   ------------------------------------------------------------------------------
 
   -- Cursor
-  Cursor = { fg = "NONE", bg = "NONE" },
+  Cursor = { fg = colors.bg, bg = colors.fg },
   lCursor = { link = "Cursor" },
   CursorIM = { link = "Cursor" },
-  CursorLine = { fg = "NONE", bg = colors.bg_light0 },
+  CursorLine = { bg = colors.bg_light1 },
   CursorColumn = { link = "CursorLine" },
-  CursorLineNr = { fg = colors.diag.warning, bg = "NONE", style = "bold" },
 
   -- Diff
-  DiffAdd = { fg = "NONE", bg = colors.diff.add },
-  DiffChange = { fg = "NONE", bg = colors.diff.change },
-  DiffDelete = { fg = "NONE", bg = colors.diff.delete },
-  DiffText = { fg = "NONE", bg = colors.diff.text },
+  DiffAdd = { bg = colors.diff.add },
+  DiffChange = { bg = colors.diff.change },
+  DiffDelete = { bg = colors.diff.delete },
+  DiffText = { bg = colors.diff.text },
 
   -- Folds
-  Folded = { fg = colors.gray, bg = colors.bg_light0, style = "italic" },
-  FoldColumn = { fg = colors.gray, bg = colors.bg_light0 },
+  Folded = { fg = colors.bg_light3, bg = colors.bg_light0 },
+  FoldColumn = { fg = colors.bg_light2 },
 
-  -- Sign and color column
+  -- Sign, color column, splits
   ColorColumn = { bg = colors.bg_light0 },
   SignColumn = { fg = colors.bg_light2, bg = "NONE" },
   SignColumnSB = { link = "SignColumn" },
+  VertSplit = { link = "WinSeparator" },
+  WinSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
+
+  -- Line number
   LineNr = { fg = colors.bg_light2 },
-  VertSplit = { fg = colors.bg_dark, bg = colors.bg_dark },
+  CursorLineNr = { fg = colors.diag.warning, style = "bold" },
 
   -- Searching
-  Search = { fg = "NONE", bg = colors.bg_search },
-  IncSearch = { fg = "NONE", bg = colors.bg_search },
+  Search = { fg = colors.fg, bg = colors.bg_search },
+  CurSearch = { link = "Search" },
+  IncSearch = { fg = colors.bg_visual, bg = colors.diag.warning },
+
+  -- Substitution
+  Substitute = { fg = colors.fg, bg = colors.git.removed },
 
   -- Messages and prompts
-  ModeMsg = { fg = colors.diag.warning, style = "bold", bg = "NONE" },
-  MsgArea = { fg = colors.fg_dark, bg = "NONE" },
-  MoreMsg = { fg = colors.diag.info, bg = colors.bg, style = "NONE" },
-  Title = { fg = colors.type, style = "bold" },
-  Question = { link = "MoreMsg" },
-  ErrorMsg = { fg = colors.diag.error, bg = "NONE", style = "bold" },
+  ModeMsg = { fg = colors.diag.warning, style = "bold" },
+  MsgArea = { fg = colors.fg_dark },
+  MoreMsg = { fg = colors.diag.info, bg = colors.bg },
+  ErrorMsg = { fg = colors.diag.error, bg = "NONE" },
   WarningMsg = { fg = colors.diag.warning, bg = "NONE" },
+
+  Title = { fg = colors.func, style = "bold" },
+  Question = { link = "MoreMsg" },
 
   -- Text-related
   NonText = { fg = colors.bg_light2 },
   Normal = { fg = colors.fg, bg = colors.bg },
   NormalNC = { link = "Normal" },
   NormalSB = { link = "Normal" },
-  MatchParen = { fg = colors.bg_search, bg = "NONE", style = "bold" },
-  Conceal = { fg = colors.bg_light3, bg = "NONE", style = "bold" },
-  Directory = { fg = colors.type },
+  MatchParen = { fg = colors.diag.warning, bg = "NONE", style = "bold" },
+  Conceal = { fg = colors.bg_light3, style = "bold" },
   SpecialKey = { link = "NonText" },
   Whitespace = { fg = colors.bg_light2 },
 
   -- Floating
   NormalFloat = { fg = colors.fg, bg = colors.bg_menu },
-  FloatBorder = { fg = colors.fg_border, bg = "NONE" },
+  FloatBorder = { fg = colors.fg_border, bg = colors.bg_dark },
 
   -- Popup and wild menu
-  Pmenu = { fg = colors.fg, bg = colors.bg_menu },
+  Pmenu = { fg = colors.fg_menu, bg = colors.bg_menu },
   PmenuSel = { fg = "NONE", bg = colors.bg_menu_sel },
   PmenuSbar = { link = "Pmenu" },
-  PmenuThumb = { bg = colors.bg_menu_sel },
+  PmenuThumb = { bg = colors.bg_search },
   WildMenu = { link = "Pmenu" },
 
   -- Quickfix
@@ -75,17 +82,15 @@ return {
   SpellRare = { style = "undercurl", guisp = colors.diag.warning },
 
   -- Status line
-  StatusLine = { fg = colors.fg_dark, bg = colors.bg_status, style = "NONE" },
-  StatusLineNC = {
-    fg = colors.fg_comment,
-    bg = colors.bg_status,
-    style = "NONE",
-  },
+  StatusLine = { fg = colors.fg_dark, bg = colors.bg_status },
+  StatusLineNC = { fg = colors.fg_comment, bg = colors.bg_status },
 
-  -- Tabs
-  TabLine = { bg = colors.bg_dark, fg = colors.bg_light3, style = "NONE" },
-  TabLineFill = { bg = colors.bg, style = "NONE" },
-  TabLineSel = { fg = colors.fg_dark, bg = colors.bg_light1, style = "NONE" },
+  -- Tabs and windows
+  TabLine = { bg = colors.bg_dark, fg = colors.bg_light3 },
+  TabLineFill = { bg = colors.bg },
+  TabLineSel = { fg = colors.fg_dark, bg = colors.bg_light1 },
+  Winbar = { fg = colors.fg_dark, bg = "NONE" },
+  WinbarNC = { link = "Winbar" },
 
   -- Visual
   Visual = { bg = colors.bg_visual },
@@ -104,12 +109,12 @@ return {
   Boolean = { fg = colors.constant },
   Float = { link = "Number" },
 
-  Identifier = { fg = colors.attribute },
+  Identifier = { fg = colors.identifier },
   Function = { fg = colors.func },
   Statement = { fg = colors.stmt },
   Operator = { fg = colors.keyword },
   Keyword = { fg = colors.keyword },
-  Exception = { fg = colors.keyword },
+  Exception = { fg = colors.special2 },
 
   PreProc = { fg = colors.preproc },
   Type = { fg = colors.type },
@@ -117,27 +122,45 @@ return {
 
   Underlined = { fg = colors.special, style = "underline" },
   Ignore = { link = "NonText" },
-  Error = { fg = colors.diag.error, bg = "NONE" },
-  Todo = { fg = colors.fg, bg = colors.bg, style = "bold" },
+  Error = { fg = colors.diag.error },
+  Todo = { fg = colors.fg_reverse, bg = colors.diag.info, style = "bold" },
 
-  ["@field"] = { fg = colors.attribute },
-  ["@function"] = { fg = colors.func },
-  ["@function.call"] = { fg = colors.variable },
-  ["@include"] = { link = "Statement" },
-  ["@label"] = { fg = colors.attribute }, -- e.g. JSON key
-  ["@namespace"] = { fg = colors.attribute },
-  ["@property"] = { fg = colors.attribute },
-  ["@punctuation.bracket"] = { fg = colors.fg_comment },
-  ["@tag.attribute"] = { fg = colors.attribute },
-  ["@tag.delimiter"] = { fg = colors.fg_comment },
+  Directory = { fg = colors.func },
+
+  ["@attribute"] = { link = "Constant" },
+  ["@field"] = { link = "Identifier" },
+  ["@function"] = { link = "Function" },
+  ["@function.call"] = { link = "Function" },
+  ["@include"] = { link = "Keyword" },
+  ["@keyword"] = { link = "Keyword" },
+  ["@keyword.operator"] = { link = "Operator" },
+  ["@label"] = { link = "Label" }, -- e.g. JSON key
+  ["@method"] = { link = "Function" },
+  ["@namespace"] = { link = "Identifier" },
+  ["@operator"] = { link = "Operator" },
+  ["@property"] = { link = "Identifier" },
+  ["@punctuation.Special"] = { fg = colors.delimiter },
+  ["@punctuation.bracket"] = { fg = colors.delimiter },
+  ["@punctuation.delimiter"] = { fg = colors.delimiter },
+
+  ["@string.regex"] = { fg = colors.regex },
+  ["@string.escape"] = { fg = colors.regex, style = "bold" },
+
+  ["@tag"] = { link = "Tag" },
+  ["@tag.attribute"] = { link = "Constant" },
+  ["@tag.delimiter"] = { fg = colors.delimiter },
+
   ["@text.danger"] = { link = "ErrorMsg" },
-  ["@type.builtin"] = { fg = colors.keyword },
-  ["@type.qualifier"] = { fg = colors.keyword }, -- e.g. C++ "public"
-  ["@variable"] = { fg = colors.variable },
+  ["@text.strong"] = { style = "bold" },
+  ["@text.emphasis"] = { style = "italic" },
+  ["@text.warning"] = { link = "Todo" },
+  ["@text.title"] = { link = "Function" },
+  ["@text.literal"] = { link = "String" },
 
-  xmlTag = { fg = colors.fg_comment },
-  xmlTagName = { fg = colors.variable },
-  xmlAttrib = { fg = colors.attribute },
+  ["@type.builtin"] = { link = "Keyword" },
+  ["@type.qualifier"] = { link = "Keyword" }, -- e.g. C++ "public"
+  ["@variable"] = { fg = colors.fg },
+  ["@variable.builtin"] = { fg = colors.special2 },
 
   ------------------------------------------------------------------------------
   -- Filetypes
@@ -149,9 +172,36 @@ return {
   diffChanged = { fg = colors.git.changed },
   diffLine = { fg = colors.git.changed },
 
+  -- XML
+  xmlTag = { fg = colors.delimiter },
+  xmlTagName = { fg = colors.fg },
+  xmlAttrib = { link = "Constant" },
+
   ------------------------------------------------------------------------------
   -- Plugins
   ------------------------------------------------------------------------------
+
+  -- Diagnostics
+  DiagnosticError = { fg = colors.diag.error },
+  DiagnosticWarn = { fg = colors.diag.warning },
+  DiagnosticInfo = { fg = colors.diag.info },
+  DiagnosticHint = { fg = colors.diag.hint },
+  DiagnosticVirtualTextError = {
+    fg = colors.diag.error,
+    bg = colors.diag_bg.error,
+  },
+  DiagnosticVirtualTextWarn = {
+    fg = colors.diag.warning,
+    bg = colors.diag_bg.warning,
+  },
+  DiagnosticVirtualTextInfo = {
+    fg = colors.diag.info,
+    bg = colors.diag_bg.info,
+  },
+  DiagnosticVirtualTextHint = {
+    fg = colors.diag.hint,
+    bg = colors.diag_bg.hint,
+  },
 
   -- GitGutter
   GitGutterAdd = { fg = colors.git.added },
@@ -159,11 +209,16 @@ return {
   GitGutterDelete = { fg = colors.git.removed },
 
   -- NvimTree
-  NvimTreeRootFolder = { fg = colors.special, style = "bold" },
+  NvimTreeNormal = { fg = colors.fg, bg = colors.bg_dark },
+  NvimTreeNormalNC = { link = "NvimTreeNormal" },
+  NvimTreeRootFolder = { fg = colors.identifier, style = "bold" },
   NvimTreeGitDirty = { fg = colors.git.changed },
   NvimTreeGitNew = { fg = colors.git.added },
   NvimTreeGitDeleted = { fg = colors.git.removed },
   NvimTreeSpecialFile = { fg = colors.special },
+  NvimTreeSymlink = { link = "Type" },
+  NvimTreeFolderName = { link = "Directory" },
+  NvimTreeGitStaged = { fg = colors.git.added },
 
   -- Telescope
   TelescopeBorder = { link = "FloatBorder" },

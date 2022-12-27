@@ -19,19 +19,24 @@ local colors = {
   fg_border = palette.dark3,
   fg_comment = palette.gray,
   fg_dark = palette.light1,
+  fg_menu = palette.light0,
+  fg_reverse = palette.dark3,
 
   -- Syntax colors
   constant = palette.bright_purple,
   string = palette.bright_green,
   number = palette.bright_purple,
-  attribute = palette.bright_blue,
-  variable = palette.light0,
-  func = palette.light0,
+  identifier = palette.bright_blue,
+  func = palette.bright_green,
   stmt = palette.bright_red,
   keyword = palette.bright_red,
+  operator = palette.bright_red,
   preproc = palette.bright_aqua,
   type = palette.bright_yellow,
   special = palette.bright_orange,
+  special2 = palette.bright_orange,
+  delimiter = palette.gray,
+  regex = palette.bright_orange,
 
   diag = {
     error = palette.bright_red,
@@ -53,6 +58,13 @@ colors.diff = {
   delete = util.darken(colors.git.removed, 0.2),
   change = util.darken(colors.git.changed, 0.2),
   text = util.darken(colors.git.changed_text, 0.2),
+}
+
+colors.diag_bg = {
+  error = util.darken(colors.diag.error, 0.1),
+  warning = util.darken(colors.diag.warning, 0.1),
+  info = util.darken(colors.diag.info, 0.1),
+  hint = util.darken(colors.diag.hint, 0.1),
 }
 
 return colors
