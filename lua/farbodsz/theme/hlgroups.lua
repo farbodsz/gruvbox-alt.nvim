@@ -152,12 +152,13 @@ return {
   ["@tag.attribute"] = { link = "Identifier" },
   ["@tag.delimiter"] = { fg = colors.delimiter },
 
-  ["@text.danger"] = { link = "ErrorMsg" },
-  ["@text.strong"] = { style = "bold" },
+  ["@text.danger"] = { fg = colors.diag.error, bg = colors.diag_bg.error },
   ["@text.emphasis"] = { style = "italic" },
-  ["@text.warning"] = { link = "Todo" },
-  ["@text.title"] = { link = "Title" },
   ["@text.literal"] = { link = "String" },
+  ["@text.strong"] = { style = "bold" },
+  ["@text.title"] = { link = "Title" },
+  ["@text.todo"] = { fg = colors.diag.hint, bg = colors.diag_bg.hint },
+  ["@text.warning"] = { fg = colors.diag.warning, bg = colors.diag_bg.warning },
 
   ["@type.builtin"] = { link = "Keyword" },
   ["@type.qualifier"] = { link = "Keyword" }, -- e.g. C++ "public"
