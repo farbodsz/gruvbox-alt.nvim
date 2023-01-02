@@ -110,11 +110,11 @@ return {
   Float = { link = "Number" },
 
   Identifier = { fg = colors.identifier },
-  Function = { fg = "NONE" },
+  Function = { fg = colors.fg },
   Statement = { fg = colors.stmt },
   Operator = { fg = colors.keyword },
   Keyword = { fg = colors.keyword },
-  Exception = { fg = colors.special2 },
+  Exception = { fg = colors.keyword },
 
   PreProc = { fg = colors.preproc },
   Type = { fg = colors.type },
@@ -138,10 +138,10 @@ return {
   ["@keyword.operator"] = { link = "Operator" },
   ["@label"] = { link = "Label" }, -- e.g. JSON key
   ["@method"] = { link = "Function" },
+  ["@method.call"] = { link = "Function" },
   ["@namespace"] = { link = "Identifier" },
   ["@operator"] = { link = "Operator" },
   ["@property"] = { link = "Identifier" },
-  ["@punctuation.Special"] = { fg = colors.delimiter },
   ["@punctuation.bracket"] = { fg = colors.delimiter },
   ["@punctuation.delimiter"] = { fg = colors.delimiter },
 
@@ -181,6 +181,12 @@ return {
   xmlAttrib = { link = "Identifier" },
 
   ------------------------------------------------------------------------------
+  -- Custom highlight groups
+  ------------------------------------------------------------------------------
+
+  NormalDark = { fg = colors.fg, bg = colors.bg_dark },
+
+  ------------------------------------------------------------------------------
   -- Plugins
   ------------------------------------------------------------------------------
 
@@ -211,8 +217,27 @@ return {
   GitGutterChange = { fg = colors.git.changed },
   GitGutterDelete = { fg = colors.git.removed },
 
+  -- Neotest
+  NeotestNormal = { link = "NormalDark" },
+  NeotestPassed = { fg = colors.git.added },
+  NeotestFailed = { fg = colors.git.removed },
+  NeotestRunning = { fg = colors.git.changed },
+  -- NeotestSkipped = {},
+  NeotestTest = { link = "Normal" },
+  NeotestNamespace = { link = "@namespace" },
+  -- NeotestFocused = {},
+  NeotestFile = { link = "Normal" },
+  NeotestDir = { link = "Directory" },
+  NeotestIndent = { link = "Ignore" },
+  NeotestExpandMarker = { link = "Ignore" },
+  NeotestAdapterName = { link = "@namespace" },
+  -- NeotestWinSelect = {},
+  NeotestMarked = { fg = colors.special },
+  -- NeotestTarget = {},
+  -- NeotestUnknown = {},
+
   -- NvimTree
-  NvimTreeNormal = { fg = colors.fg, bg = colors.bg_dark },
+  NvimTreeNormal = { link = "NormalDark" },
   NvimTreeNormalNC = { link = "NvimTreeNormal" },
   NvimTreeRootFolder = { fg = colors.identifier, style = "bold" },
   NvimTreeGitDirty = { fg = colors.git.changed },
@@ -225,4 +250,8 @@ return {
 
   -- Telescope
   TelescopeBorder = { link = "FloatBorder" },
+
+  -- Toggleterm (custom highlights)
+  ToggletermNormal = { link = "NormalDark" },
+  ToggletermNormalFloat = { link = "ToggletermNormal" },
 }
