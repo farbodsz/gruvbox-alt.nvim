@@ -218,7 +218,6 @@ return {
   GitGutterDelete = { fg = colors.git.removed },
 
   -- Neotest
-  NeotestNormal = { link = "NormalDark" },
   NeotestPassed = { fg = colors.git.added },
   NeotestFailed = { fg = colors.git.removed },
   NeotestRunning = { fg = colors.git.changed },

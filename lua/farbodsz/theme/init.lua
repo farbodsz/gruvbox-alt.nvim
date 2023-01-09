@@ -16,6 +16,20 @@ local function set_highlights(hlgroups)
   end
 end
 
+--- Filetype highlights for plugins
+local function set_filetype_highlights()
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = {
+      "dirbuf",
+      "Outline",
+      "neotest-summary",
+    },
+    callback = function()
+      vim.cmd("set winhighlight=Normal:NormalDark")
+    end,
+  })
+end
+
 function M.load()
   if vim.g.colors_name then
     vim.cmd("hi clear")
@@ -24,6 +38,8 @@ function M.load()
 
   local hlgroups = require("farbodsz.theme.hlgroups")
   set_highlights(hlgroups)
+
+  set_filetype_highlights()
 end
 
 return M
