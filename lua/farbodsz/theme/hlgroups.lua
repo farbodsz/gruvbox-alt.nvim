@@ -13,10 +13,10 @@ return {
   CursorColumn = { link = "CursorLine" },
 
   -- Diff
-  DiffAdd = { bg = colors.diff.add },
-  DiffChange = { bg = colors.diff.change },
-  DiffDelete = { bg = colors.diff.delete },
-  DiffText = { bg = colors.diff.text },
+  DiffAdd = { fg = "NONE", bg = colors.diff.add },
+  DiffChange = { fg = "NONE", bg = colors.diff.change },
+  DiffDelete = { fg = "NONE", bg = colors.diff.delete },
+  DiffText = { fg = "NONE", bg = colors.diff.text },
 
   -- Folds
   Folded = { fg = colors.bg_light3, bg = colors.bg_light0 },
